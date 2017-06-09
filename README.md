@@ -76,7 +76,7 @@ SomeSpi.impl = alternate.SomeSpiAlternate
 alternate.config.key = This is the alternate
 ```
 
-#Example
+# Example
 
 See the `example` directory:
 * `example/app` - the `SpiExtensionApp` application and default impl of `Spi2` SPI
@@ -84,14 +84,14 @@ See the `example` directory:
 * `example/impl1` - an externally defined impl of an SPI
 * `example/impl2` - another externally defined impl of an SPI
 
-###Current config
+### Current config
 
 The current config leverages the `impl2` version of Spi2, so when you run the app you see the log:
 ```text
 Resolved spi impl for test.Spi2 to com.alternate.DifferentImpl using config key 'spi2.impl'.
 ```
 
-###Changeing the impl
+### Changeing the impl
 
 To change to `impl1` version:
 * change the `spi2.impl` in `application.conf` to `com.other.SpiImplOther`
