@@ -38,7 +38,7 @@ class DefaultSomeSpi extends SomeSpi {
 ```    
 
 * add default configs to `reference.conf`
-```properties
+```
 #this key drives the impl (note configKey="SomeSpi.impl" from above)
 SomeSpi.impl = com.impl.DefaultSomeSpi
 #this key drives the config for the impl (note config.getString("somespi.conf.key1")
@@ -46,7 +46,7 @@ somespi.conf.key1 = value1
 ```
 
 * add ServiceLoader conf `META-INF/services/com.SomeSpi`
-```text
+```
 com.impl.DefaultSomeSpi
 ```  
 
@@ -64,15 +64,15 @@ class SomeSpiAlternate extends SomeSpi{
 }
 ```
 * add ServiceLoader conf `META-INF/services/com.SomeSpi`
-```text
+```
 alternate.SomeSpiAlternate
 ```  
 * enable the application override in `application.conf`
-```properties
+```
 SomeSpi.impl = alternate.SomeSpiAlternate
 ```
 * add alternate config (as required by SomeSpiAlternate) to `application.conf`
-```properties
+```
 alternate.config.key = This is the alternate
 ```
 
@@ -87,7 +87,7 @@ See the `example` directory:
 ### Current config
 
 The current config leverages the `impl2` version of Spi2, so when you run the app you see the log:
-```text
+```
 Resolved spi impl for test.Spi2 to com.alternate.DifferentImpl using config key 'spi2.impl'.
 ```
 
@@ -97,7 +97,7 @@ To change to `impl1` version:
 * change the `spi2.impl` in `application.conf` to `com.other.SpiImplOther`
 
 Then on run the log will indicate:
-```text
+```
 Resolved spi impl for test.Spi2 to com.other.SpiImplOther using config key 'spi2.impl'.
 ```
 
@@ -108,7 +108,7 @@ To use the default impl `DefaultSpi2`:
 * delete the `spi2.impl` key in `application.conf`
 
 Then on run the log will indicate:
-```text
+```
 Resolved spi impl for test.Spi2 to test.DefaultSpi2 using config key 'spi2.impl'.
 ``` 
 
