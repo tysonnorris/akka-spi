@@ -1,0 +1,9 @@
+//include 'spi-core'
+//project(':spi-core').projectDir = new File('../../spi-core')
+
+rootProject.name = 'akka-spi-example-app'
+//need scala 2.12 to use java 8 lambdas...
+gradle.ext.scala = [
+    version: '2.12.2',
+    compileFlags: ['-feature', '-unchecked', '-deprecation', '-Xfatal-warnings', '-Ywarn-unused-import']
+]

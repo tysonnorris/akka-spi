@@ -1,0 +1,16 @@
+apply plugin: 'scala'
+apply plugin: 'idea'
+repositories {
+    mavenCentral()
+}
+
+ext {
+    scalaVersion = "2.12"
+    akkaVersion = "2.5.1"
+    akkaHttpVersion = "10.0.6"
+}
+
+dependencies {
+    compile project(':example:app-spi')
+}
+
