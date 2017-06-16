@@ -17,6 +17,7 @@ dependencies {
     compile "com.typesafe.akka:akka-actor_${scalaVersion}:${akkaVersion}"
     compile "com.typesafe.akka:akka-slf4j_${scalaVersion}:${akkaVersion}"
     compile "ch.qos.logback:logback-classic:1.1.7"
+    compile "org.scaldi:scaldi_${scalaVersion}:0.5.8"
     
 }
 
