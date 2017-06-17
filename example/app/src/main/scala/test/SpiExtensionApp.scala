@@ -1,6 +1,7 @@
 package test
 
 import akka.actor.ActorSystem
+import com.app.spi.SpiModuleLoader
 /**
   * Created by tnorris on 6/7/17.
   */
@@ -9,6 +10,7 @@ object SpiExtensionApp {
 
     val system = ActorSystem("spi-extension-test")
 
+    SpiModuleLoader.initInjector(system)
     val spiInstance1:Spi1 = Spi1(system)
     val spiInstance2:Spi2 = Spi2(system)
     val spiInstance3:Spi2 = Spi2(system)
